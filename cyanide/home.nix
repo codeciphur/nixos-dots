@@ -9,6 +9,7 @@
 
   home.packages = with pkgs; [
     niri
+    librewolf
     inputs.terax.packages.${pkgs.stdenv.hostPlatform.system}.terax # Terax ai editor
   ];
 
