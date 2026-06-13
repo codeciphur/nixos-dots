@@ -7,8 +7,8 @@
     ./bash.nix
   ];
 
+  # Note: niri is already installed via configuration.nix
   home.packages = with pkgs; [
-    niri
     librewolf
     inputs.terax.packages.${pkgs.stdenv.hostPlatform.system}.terax # Terax ai editor
   ];
