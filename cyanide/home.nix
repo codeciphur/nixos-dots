@@ -4,6 +4,7 @@
   # All my custom configs
   imports = [
     ./git.nix
+    ./bash.nix
   ];
 
   home.packages = with pkgs; [
