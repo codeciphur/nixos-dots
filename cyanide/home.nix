@@ -5,12 +5,15 @@
   imports = [
     ./git.nix
     ./bash.nix
+    ./niri/niri.nix
+    ./helix.nix
   ];
 
   # Note: niri is already installed via configuration.nix
   home.packages = with pkgs; [
     librewolf
-    inputs.terax.packages.${pkgs.stdenv.hostPlatform.system}.terax # Terax ai editor
+    alacritty
+    # inputs.terax.packages.${pkgs.stdenv.hostPlatform.system}.terax # Terax ai editor
   ];
 
   # Home manager settings

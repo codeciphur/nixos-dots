@@ -2,12 +2,14 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      # Import the terax module:
+      #inputs.terax.nixosModules.terax
     ];
 
   # Enable Experimental, aka flakes
@@ -52,6 +54,8 @@
 
   # Niri
   programs.niri.enable = true;
+  # Terax
+  # services.terax.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -59,8 +63,40 @@
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
   git
-  evil-helix # This is a core system compononent - no other way about it.
+  #evil-helix # This is a core system compononent - no other way about it.
+  helix # Replaced evil-helix with helix - still a core system component.
+  # inputs.terax.packages.${pkgs.stdenv.hostPlatform.system}.terax # Terax ai editor
+    inputs.terax.packages.${pkgs.system}.terax # Terax ai editor
   ];
+
+  # XDG things mainly for terax
+  # xdg.portal = {
+  #   enable = true;
+  #   extraPortals = [ pkgs.xdg-desktop-portal-wlr pkgs.xdg-desktop-portal-gtk ];
+  #   config.niri = {
+  #     "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+  #     "org.freedesktop.impl.portal.Settings " = [ "gtk" ];
+  #   };
+  # };
+
+  # environment.sessionVariables = {
+  #   # Programs should know that we are in niri and on wayland
+  #   XDG_SESSION_TYPE = "wayland";
+  #   XDG_CURRENT_DESKTOP = "niri";
+  #   MOZ_ENABLE_WAYLAND = "1";
+
+  #   # Tauri (terax) and electron apps need to run on wayland
+  #   NIXOS_OZONE_WL = "1";
+
+  #   WEBKIT_DISABLE_COMPOSITING_MODE = "1";
+  #   WEBKIT_DISABLE_DMABUF = "1";
+  # };
+
+  # To enable sddm (but mouse does not work)
+  # services.displayManager.sddm = {
+  #   enable = true;
+  #   wayland.enable = true;
+  # };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
