@@ -7,6 +7,7 @@
     ./bash.nix
     ./niri/niri.nix
     ./helix.nix
+    ./alacritty.nix
   ];
 
   # Note: niri is already installed via configuration.nix

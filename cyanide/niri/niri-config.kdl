@@ -169,13 +169,13 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#7fc8ff"
+        active-color "#D96D9B"
 
         // Color of the ring on inactive monitors.
         //
         // The focus ring only draws around the active window, so the only place
         // where you can see its inactive-color is on other monitors.
-        inactive-color "#505050"
+        inactive-color "#4A2A3C"
 
         // You can also use gradients. They take precedence over solid colors.
         // Gradients are rendered the same as CSS linear-gradient(angle, from, to).
@@ -272,7 +272,9 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 // spawn-at-startup "waybar"
 spawn-at-startup "awww-daemon"
-spawn-at-startup "awww" "img" "/home/cyanide/dots/cyanide/wallpapers/jabami-yumeko-wallpaper.png"
+// spawn-at-startup "awww" "img" "/home/cyanide/dots/cyanide/wallpapers/jabami-yumeko-wallpaper.png"
+spawn-at-startup "awww" "img" "~/dots/cyanide/wallpapers/jabami-yumeko-wallpaper.png"
+ 
 // Terax trouble shooting:
 // spawn-at-startup "dbus-update-activation-environment" "--systemd" "DISPLAY" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
 
@@ -289,7 +291,7 @@ hotkey-overlay {
 // Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
 // This option will also fix border/focus ring drawing behind some semitransparent windows.
 // After enabling or disabling this, you need to restart the apps for this to take effect.
-// prefer-no-csd
+prefer-no-csd
 
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
@@ -307,7 +309,7 @@ animations {
     // off
 
     // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 3.0
+    slowdown 0.8
 }
 
 // For the overview:
@@ -361,6 +363,7 @@ window-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
+    draw-border-with-background false
     geometry-corner-radius 12
     clip-to-geometry true
 }
