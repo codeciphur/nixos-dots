@@ -8,6 +8,27 @@
     settings = {
       window = {
         opacity = 0.8;
+        padding = { x = 3; y = 3; };
+      };
+
+      font = {
+        normal = {
+          family = "CaskaydiaCove Nerd Font";
+          style = "Regular";
+        };
+        bold = {
+          family = "CaskaydiaCove Nerd Font";
+          style = "Bold";
+        };
+        italic = {
+          family = "CaskaydiaCove Nerd Font";
+          style = "Italic";
+        };
+        bold_italic = {
+          family = "CaskaydiaCove Nerd Font";
+          style = "Bold Italic";
+        };
+        size = 12.0;
       };
 
       colors = {

@@ -8,6 +8,7 @@
     ./niri/niri.nix
     ./helix.nix
     ./alacritty.nix
+    ./starship.nix
   ];
 
   # Note: niri is already installed via configuration.nix
@@ -15,8 +16,15 @@
     librewolf
     alacritty
     awww
+    starship
+    # nerd-fonts.jetbrains-mono
+    # source-code-pro
+    # nerd-fonts.blex-mono
+    nerd-fonts.caskaydia-cove
     # inputs.terax.packages.${pkgs.stdenv.hostPlatform.system}.terax # Terax ai editor
   ];
+
+  fonts.fontconfig.enable = true;
 
   # Home manager settings
   home.username = "cyanide";
