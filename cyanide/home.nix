@@ -13,6 +13,7 @@
   home.packages = with pkgs; [
     librewolf
     alacritty
+    awww
     # inputs.terax.packages.${pkgs.stdenv.hostPlatform.system}.terax # Terax ai editor
   ];
 
