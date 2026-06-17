@@ -8,7 +8,7 @@
     settings = {
       window = {
         opacity = 0.8;
-        padding = { x = 3; y = 3; };
+        padding = { x = 5; y = 5; };
       };
 
       font = {
@@ -34,32 +34,32 @@
       colors = {
         # Default colors
         primary = {
-          background = "#120A12"; # color0
-          foreground = "#D8C8D0"; # color7
+          background = "#0d0406"; # Deepest dark shadow tone from the edges
+          foreground = "#e5d4dc"; # Soft off-white from Yumeko's collared shirt
         };
 
         # Normal colors
         normal = {
-          black   = "#120A12"; # color0
-          red     = "#C7375E"; # color1
-          green   = "#9A6F8D"; # color2
-          yellow  = "#D47A8C"; # color3
-          blue    = "#7E5470"; # color4
-          magenta = "#B34F7C"; # color5
-          cyan    = "#C8A2B7"; # color6
-          white   = "#D8C8D0"; # color7
+          black   = "#18090d"; # Very dark charcoal red/black
+          red     = "#9a141d"; # Rich crimson from her Hyakkaou Academy blazer
+          green   = "#56232d"; # Dark muted wine (acts as a subtle accent)
+          yellow  = "#d64550"; # Vibrant blood red
+          blue    = "#3d131a"; # Deep burgundy shadow
+          magenta = "#be1c31"; # Intense, chaotic magenta-leaning red
+          cyan    = "#a68c96"; # Muted ash-lavender from her hair highlights
+          white   = "#c2b0b8"; # Clean, slightly desaturated grey-white
         };
 
         # Bright colors
         bright = {
-          black   = "#4A2A3C"; # color8
-          red     = "#E73B67"; # color9
-          green   = "#B487A3"; # color10
-          yellow  = "#F39AA7"; # color11
-          blue    = "#A36E90"; # color12
-          magenta = "#D96D9B"; # color13
-          cyan    = "#E3C0D2"; # color14
-          white   = "#F4EAF0"; # color15
+          black   = "#2c1116"; # Brighter shadow tone
+          red     = "#ff2e43"; # Lethal neon glow from her glowing red eyes 
+          green   = "#7c3543"; # Lighter wine tone
+          yellow  = "#ff5967"; # Bright, intense coral red
+          blue    = "#5c1e29"; # Mid-tone burgundy
+          magenta = "#e02840"; # High-saturation poker-chip red
+          cyan    = "#decad3"; # High-contrast ash-grey
+          white   = "#f2e6eb"; # Purest highlight white from the text graphic
         };
       };
     };

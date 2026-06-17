@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./../../cyanide/sddm/sddm.nix
       # Import the terax module:
       #inputs.terax.nixosModules.terax
     ];
@@ -53,50 +54,35 @@
   nixpkgs.config.allowUnfree = true;
 
   # Niri
-  programs.niri.enable = true;
+  programs.niri = {
+    enable = true;
+    package = pkgs.niri;
+  };
   # Terax
-  # services.terax.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
   git
-  #evil-helix # This is a core system compononent - no other way about it.
   helix # Replaced evil-helix with helix - still a core system component.
-  # inputs.terax.packages.${pkgs.stdenv.hostPlatform.system}.terax # Terax ai editor
-    inputs.terax.packages.${pkgs.system}.terax # Terax ai editor
+  inputs.terax.packages.${pkgs.stdenv.hostPlatform.system}.terax # Terax ai editor
+  xdg-desktop-portal-gtk  # Ensure a portal-compatible file chooser/theme layer is available
   ];
 
-  # XDG things mainly for terax
-  # xdg.portal = {
-  #   enable = true;
-  #   extraPortals = [ pkgs.xdg-desktop-portal-wlr pkgs.xdg-desktop-portal-gtk ];
-  #   config.niri = {
-  #     "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
-  #     "org.freedesktop.impl.portal.Settings " = [ "gtk" ];
-  #   };
-  # };
-
-  # environment.sessionVariables = {
-  #   # Programs should know that we are in niri and on wayland
-  #   XDG_SESSION_TYPE = "wayland";
-  #   XDG_CURRENT_DESKTOP = "niri";
-  #   MOZ_ENABLE_WAYLAND = "1";
-
-  #   # Tauri (terax) and electron apps need to run on wayland
-  #   NIXOS_OZONE_WL = "1";
-
-  #   WEBKIT_DISABLE_COMPOSITING_MODE = "1";
-  #   WEBKIT_DISABLE_DMABUF = "1";
-  # };
-
-  # To enable sddm (but mouse does not work)
-  # services.displayManager.sddm = {
-  #   enable = true;
-  #   wayland.enable = true;
-  # };
+  # Enable XDG Desktop Portal for file picking & screensharing
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    # Force niri to use gtk instead of Gnome for file picking
+    config = pkgs.lib.mkForce {
+      # Enable gtk filepicking in niri
+      niri = {
+        default = [ "gtk" ];
+        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+      };
+    };
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
