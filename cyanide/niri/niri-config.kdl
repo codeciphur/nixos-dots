@@ -396,7 +396,7 @@ binds {
     Alt+Return hotkey-overlay-title="Spawn terminal: terax" { spawn "terax"; }
     Alt+T hotkey-overlay-title="Spawn terminal: alacritty" { spawn "alacritty"; }
     Alt+B hotkey-overlay-title="Spawn terminal: librewolf" { spawn "librewolf"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+    Alt+P hotkey-overlay-title="Lock Desktp: hyprlock" { spawn "hyprlock"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.

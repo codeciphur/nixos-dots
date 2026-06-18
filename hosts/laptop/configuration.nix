@@ -58,6 +58,10 @@
     enable = true;
     package = pkgs.niri;
   };
+
+  # Hyprlock
+  security.pam.services.hyprlock = {};
+  
   # Terax
 
   # List packages installed in system profile. To search, run:

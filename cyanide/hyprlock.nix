@@ -15,7 +15,7 @@
         monitor = "";
         # path = "/home/cyanide/dots/cyanide/wallpapers/goth-anime-girl-with-hammer-red-bg.jpg";
         path = "/home/cyanide/dots/cyanide/wallpapers/goth-anime-japanese-girl-red-bg.jpg";
-        color = "rgba(0, 0, 0, 0,4)"
+        color = "rgba(0, 0, 0, 0.8)";
       }
     ];
 
@@ -25,31 +25,76 @@
       {
         text = "$TIME";
         color = "rgba(255,255,255,1.0)";
-        font_size = 140;
+        font_size = 120;
         font_family = "CaskaydiaCove Nerd Font";
 
-        position = "40, 200";
-        halign = "left";
+        position = "-50, 50";
+        halign = "right";
         valign = "center";
       }
       # Date
       {
         text = "cmd[update:60000] date +\"%A, %d %B %Y\"";
         color = "rgba(136,136,136,1.0)";
-        font_size = 25;
+        font_size = 20;
         font_family = "CaskaydiaCove Nerd Font";
 
-        position = "80, 100";
+        position = "-110, -50";
+        halign = "right";
+        valign = "center";
+      }
+      {
+        text = "$USER";
+        color = "rgba(255,255,255,1.0)";
+        # color = "rgb(5BC4C5)";
+        font_size = 100;
+        font_family = "CaskaydiaCove Nerd Font";
+        position = "40, 30";
         halign = "left";
         valign = "center";
       }
-      # Logged in text
+      # Make "User" Vertical
       {
-        text = "󰌾 Logged in as $USER";
-        color = "rgba(255,255,255,1.0)";
+        text = "U";
+        # color = "rgba(255,255,255,1.0)";
+        color = "rgb(BA3133)";
+        # color = "rgb(5BC4C5)";
         font_size = 12;
         font_family = "CaskaydiaCove Nerd Font";
-        position = "90, -40";
+        position = "287, 40";
+        halign = "left";
+        valign = "center";
+      }
+      {
+        text = "S";
+        # color = "rgba(255,255,255,1.0)";
+        color = "rgb(BA3133)";
+        # color = "rgb(5BC4C5)";
+        font_size = 12;
+        font_family = "CaskaydiaCove Nerd Font";
+        position = "287, 25";
+        halign = "left";
+        valign = "center";
+      }
+      {
+        text = "E";
+        # color = "rgba(255,255,255,1.0)";
+        color = "rgb(BA3133)";
+        # color = "rgb(5BC4C5)";
+        font_size = 12;
+        font_family = "CaskaydiaCove Nerd Font";
+        position = "287, 10";
+        halign = "left";
+        valign = "center";
+      }
+      {
+        text = "R";
+        # color = "rgba(255,255,255,1.0)";
+        color = "rgb(BA3133)";
+        # color = "rgb(5BC4C5)";
+        font_size = 12;
+        font_family = "CaskaydiaCove Nerd Font";
+        position = "287, -5";
         halign = "left";
         valign = "center";
       }
@@ -58,22 +103,23 @@
     # Password input
     input-field = [
       {
-        size = "300, 60";
+        size = "300, 30";
 
-        outline_thickness = 4;
+        outline_thickness = 3;
         dots_size = 0.2;
         dots_spacing = 0.2;
         dots_center = true;
 
-        outer_color = "rgb(ff5500)";
-        inner_color = "rgb(0a0a0a)";
+        outer_color = "rgb(8C1F21)";
+        inner_color = "rgb(1C1E24)";
 
         font_family = "CaskaydiaCove Nerd Font";
 
         fade_on_empty = false;
 
         placeholder_text = " Password ";
-        font_color = "rgba(255,255,255,1.0)";
+        # font_color = "rgba(255,255,255,1.0)";
+        font_color = "rgb(C6D1D9)";
 
         hide_input = false;
 
@@ -83,7 +129,7 @@
 
         capslock_color = "rgb(ffff00)";
 
-        position = "40, -100";
+        position = "170, -55";
         halign = "left";
         valign = "center";
       }
