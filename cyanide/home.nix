@@ -10,6 +10,7 @@
     ./alacritty.nix
     ./starship.nix
     ./waybar/waybar.nix
+    ./hyprlock.nix
   ];
 
   # Note: niri is already installed via configuration.nix
@@ -24,6 +25,7 @@
     nerd-fonts.caskaydia-cove
     # inputs.terax.packages.${pkgs.stdenv.hostPlatform.system}.terax # Terax ai editor
     waybar
+    hyprlock
   ];
 
   fonts.fontconfig.enable = true;
