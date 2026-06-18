@@ -276,7 +276,7 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-// spawn-at-startup "waybar"
+spawn-at-startup "waybar"
 spawn-at-startup "awww-daemon"
 // spawn-at-startup "awww" "img" "/home/cyanide/dots/cyanide/wallpapers/jabami-yumeko-wallpaper.png"
 spawn-at-startup "awww" "img" "~/dots/cyanide/wallpapers/jabami-yumeko-wallpaper.png"

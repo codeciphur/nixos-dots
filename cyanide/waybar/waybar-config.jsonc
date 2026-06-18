@@ -29,23 +29,23 @@
     "format": "<span color='#021c18'>󰍿</span> <span color='#313436'></span> ",
     "format-alt": "󰍿 <span color='#bbc2c7'></span> ",
     "on-click": "~/mouse.sh",
-    "tooltip": false,
+    "tooltip": false
 },
 
 "upower": {
      "icon-size": 20,
-     "format": "",
+      "format": "",
      "format-alt": "{}<span color='orange'>[{time}]</span>",
      "tooltip": true,
      "tooltip-spacing": 20,
-     "on-click-right": "pkill waybar && niri msg action spawn -- waybar"
+      "on-click-right": "pkill waybar && niri msg action spawn -- waybar"
 },
 
 "upower#headset": {
-    "format": "\n{percentage}",
+    "format": " {percentage}",
     "native-path": "/org/freedesktop/UPower/devices/headset_dev_A6_98_9A_0D_D3_49",
     "show-icon": false,
-    "tooltip": false,
+    "tooltip": false
 },
 
 "group/expand-4": {
@@ -53,14 +53,14 @@
      "drawer": {
          "transition-duration": 600,
          "children-class": "not-power",
-         "transition-top-to-bottom": false,
+         "transition-left-to-right": false,
          "click-to-reveal": true
      },
      "modules": ["upower","upower/headset"]
    },
 
 "custom/smallspacer":{
-    "format": " ",
+    "format": " "
 },
 
 "memory": {
@@ -75,14 +75,14 @@
     "interval": 1,
     "format": "{icon}",
     "rotate": 0,
-    "format-icons": ["󰝦 ","󰪞 ","󰪟 ","󰪠 ","󰪡 ","󰪢 ","󰪣 ","󰪤 ","󰪥"],
+    "format-icons": ["󰝦 ","󰪞 ","󰪟 ","󰪠 ","󰪡 ","󰪢 ","󰪣 ","󰪤 ","󰪥"]
 },
+
 
 "mpris": {
 	"format": "{player_icon} {dynamic}",
 	"format-paused": "<span color='grey'>{status_icon} {dynamic}</span>",
 	"max-length": 50,
-    "rotate": 270,
 	"player-icons": {
 		"default": "⏸",
 		"mpv": "🎵"
@@ -103,15 +103,16 @@
      "drawer": {
          "transition-duration": 600,
          "children-class": "not-power",
-         "transition-top-to-bottom": false
+         "transition-left-to-right": false
      },
      "modules": ["custom/menu","custom/spacer","tray"]
    },
 
  "custom/menu":{
      "format": "󰅃",
-     "rotate": 0,
+     "rotate": 90
  },
+
 
 "custom/notification": {
     "tooltip": false,
@@ -135,11 +136,10 @@
   },
 
   "niri/window": {
-    "format": "<span weight='bold'>{app_id}</span>",
+    "format": "<span  weight='bold' >{app_id}</span>",
     "max-length": 120,
-    "rotate": 270,
     "icon": false,
-    "icon-size": 13,
+    "icon-size": 13
 },
 
     "custom/power": {
@@ -151,7 +151,7 @@
     },
 
     "custom/spacer":{
-        "format": "―"
+        "format": "|"
     },
 
 "niri/workspaces": {
@@ -161,6 +161,15 @@
         "active": ""
 	}
 },
+
+"wlr/workspaces": {
+    "persistent-workspaces": {
+        "3": [],
+        "4": ["eDP-1"], 
+        "5": ["eDP-1", "DP-2"] 
+    }
+},
+
 
 "cava": {
       "cava_config": "~/.config/cava/config",
@@ -185,8 +194,8 @@
     },
 
     "custom/script": {
-    "on-click": "~/.config/waybar/volume.sh toggle",
-    "format": ""
+        "on-click": "~/.config/waybar/volume.sh toggle",
+        "format": ""
     },
 
     "custom/cliphist": {
@@ -196,7 +205,7 @@
         "on-click": "sleep 0.1 && cliphist.sh c",
         "on-click-right": "sleep 0.1 && cliphist.sh d",
         "on-click-middle": "sleep 0.1 && cliphist.sh w",
-        "interval" : 86400, 
+        "interval" : 86400,
         "tooltip": true
     },
 
@@ -231,11 +240,12 @@
         "on-click-middle": "swww img --transition-type grow --transition-pos 0.071,0.988 --transition-step 255 --transition-fps 60 /home/anik/Downloads/gradient.jpg",
         "on-scroll-up": "swww img --transition-type grow --transition-pos 0.071,0.988 --transition-step 255 --transition-fps 60 /home/anik/Downloads/torvalds.png",
         "on-scroll-down": "swww img --transition-type grow --transition-pos 0.071,0.988 --transition-step 255 --transition-fps 60 /home/anik/Downloads/night.png",
-        "interval" : 86400, 
+        "interval" : 86400,
         "tooltip": true
     },
-    
-    "custom/mouse": {
+
+    "custom/mouse":
+    {
         "format": "",
         "format-alt": "",
         "on-click": "m8mouse -dpi 1 -led 2 -speed 4",
@@ -244,10 +254,27 @@
         "tooltip": true
     },
 
+	"wlr/taskbar": {
+		"format": "{icon}",
+		"rotate": 0,
+		"icon-size": 18,
+		"icon-theme": "Tela-circle-dracula",
+        "spacing": 0,
+		"tooltip-format": "{title}",
+		"on-click": "activate",
+		"on-click-middle": "close",
+		"ignore-list": [
+			"Alacritty"
+		],
+		"app_ids-mapping": {
+			"firefoxdeveloperedition": "firefox-developer-edition"
+		}
+	},
+
     "custom/spotify": {
         "exec": "mediaplayer.py --player spotify",
         "format": " {}",
-        "rotate": 270,
+        "rotate": 0,
         "return-type": "json",
         "on-click": "playerctl play-pause --player spotify",
         "on-click-right": "playerctl next --player spotify",
@@ -263,14 +290,14 @@
         "format": "{icon}",
         "rotate": 0,
         "format-icons": {
-            "activated": "󰥔",
-            "deactivated": ""
+            "activated": "󰥔 ",
+            "deactivated": " "
         }
     },
 
     "clock": {
-        "format": "{:%I:%M %p}",
-        "rotate": 270,
+        "format": "{:%I\n-—\n%M\n-—\n%p}",
+        "rotate": 0,
         "on-click": "/usr/local/bin/ags -t ActivityCenter",
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
@@ -304,7 +331,8 @@
         "rotate": 0,
         "format-charging": "<span color='#a6d189'>󱐋</span>",
         "format-plugged": "󰂄",
-        "format-alt": "<span weight='bold' color='#c2864a'>{time}</span>\n<span weight='bold' color='#82d457'>{capacity}%</span>",
+        // "format-alt": "<span weight='bold' color='#c2864a'>{time} </span><span weight='bold' color='white'>| </span><span weight='bold' color='#82d457'>{capacity}%</span>",
+        "format-alt": "<span weight='bold' color='#D61C33'>{capacity}%</span>",
         "format-icons": ["󰝦 ","󰪞 ","󰪟 ","󰪠 ","󰪡 ","󰪢 ","󰪣 ","󰪤 ","󰪥 "],
         "on-click-right": "pkill waybar && niri msg action spawn -- waybar"
     },
@@ -323,7 +351,7 @@
      "drawer": {
          "transition-duration": 600,
          "children-class": "not-power",
-         "transition-top-to-bottom": false,
+         "transition-left-to-right": false,
          "click-to-reveal": true
      },
      "modules": ["backlight","backlight/slider","custom/smallspacer"]
@@ -334,7 +362,7 @@
      "drawer": {
          "transition-duration": 600,
          "children-class": "not-power",
-         "transition-top-to-bottom": false,
+         "transition-left-to-right": false,
          "click-to-reveal": true
      },
      "modules": ["pulseaudio","pulseaudio/slider"]
@@ -342,7 +370,7 @@
 
     "network": {
         "tooltip": true,
-        "format-wifi": "{icon}",
+        "format-wifi": "{icon} ",
         "format-icons": ["󰤟 ", "󰤢 ", "󰤥 "],
         "rotate": 0,
         "format-ethernet": "󰈀 ",
@@ -425,29 +453,65 @@
     },
 
 // modules for padding //
-    "custom/l_end": { "format": " ", "interval" : "once", "tooltip": false },
-    "custom/r_end": { "format": " ", "interval" : "once", "tooltip": false },
-    "custom/sl_end": { "format": " ", "interval" : "once", "tooltip": false },
-    "custom/sr_end": { "format": " ", "interval" : "once", "tooltip": false },
-    "custom/rl_end": { "format": " ", "interval" : "once", "tooltip": false },
-    "custom/rr_end": { "format": " ", "interval" : "once", "tooltip": false },
-    "custom/padd": { "format": " ", "interval" : "once", "tooltip": false },
 
-    "backlight/slider": {
-        "min": 5,
-        "max": 100,
-        "orientation": "vertical",
-        "rotate": 0,
-        "device": "intel_backlight",
-        "scroll-step": 1
+    "custom/l_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
     },
 
-    "pulseaudio/slider": {
-        "min": 5,
-        "max": 100,
-        "orientation": "vertical",
-        "rotate": 0,
-        "device": "pulseaudio",
-        "scroll-step": 1
-    }
+    "custom/r_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/sl_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/sr_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/rl_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/rr_end": {
+        "format": " ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+    "custom/padd": {
+        "format": "  ",
+        "interval" : "once",
+        "tooltip": false
+    },
+
+
+"backlight/slider": {
+    "min": 5,
+    "max": 100,
+    "orientation": "vertical",
+    "rotate": 0,
+    "device": "intel_backlight",
+    "scroll-step": 1
+  },
+
+  "pulseaudio/slider": {
+    "min": 5,
+    "max": 100,
+    "orientation": "vertical",
+    "rotate": 0,
+    "device": "pulseaudio",
+    "scroll-step": 1
+  }
 }
