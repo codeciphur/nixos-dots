@@ -11,6 +11,7 @@
     ./starship.nix
     ./waybar/waybar.nix
     ./hyprlock.nix
+    ./terax/terax.nix
   ];
 
   # Note: niri is already installed via configuration.nix
@@ -23,12 +24,22 @@
     # source-code-pro
     # nerd-fonts.blex-mono
     nerd-fonts.caskaydia-cove
-    # inputs.terax.packages.${pkgs.stdenv.hostPlatform.system}.terax # Terax ai editor
     waybar
     hyprlock
+    rofi-unwrapped # rofi-wayland
+    # These two are needed for terax to render properly:
+    # gsettings-desktop-schemas
+    # gtk4
   ];
 
   fonts.fontconfig.enable = true;
+
+  # This is also for terax to render properly:
+  # This dynamically appends the necessary Nix-store schema paths 
+  # to your session profile regardless of your shell (bash, zsh, fish)
+  home.sessionVariables = {
+    XDG_DATA_DIRS = "$XDG_DATA_DIRS:${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas/${pkgs.gsettings-desktop-schemas.name}:${pkgs.gtk4}/share/gsettings-schemas/${pkgs.gtk4.name}";
+  };
 
   # Home manager settings
   home.username = "cyanide";

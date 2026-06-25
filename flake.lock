@@ -64,11 +64,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1781359225,
-        "narHash": "sha256-/67nl17x6hYumwmt3VcADp2iY40sgjsTKqVNcogWAdI=",
+        "lastModified": 1782313305,
+        "narHash": "sha256-4satYc19+q6mcVu4ItFvS9hu9IMB9FHUBFYsBISDEmw=",
         "owner": "crynta",
         "repo": "terax-ai",
-        "rev": "2711841da3fd4bb7bc68f617b4ec745e4083530c",
+        "rev": "d77476e762b8ade438c643061723b9f494213600",
         "type": "github"
       },
       "original": {

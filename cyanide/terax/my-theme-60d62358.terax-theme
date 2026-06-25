@@ -1,0 +1,39 @@
+{
+  "id": "my-theme-60d62358",
+  "name": "Jabami Yumeko",
+  "description": "Custom Kakegurui Yumeko Jabami theme.",
+  "variants": {
+    "dark": {
+      "colors": {
+        "background": "#0d0406",
+        "foreground": "#e5d4dc",
+        "card": "#18090d",
+        "cardForeground": "#e5d4dc",
+        "popover": "#18090d",
+        "popoverForeground": "#e5d4dc",
+        "primary": "#ff2e43",
+        "primaryForeground": "#0d0406",
+        "muted": "#2c1116",
+        "mutedForeground": "#a68c96",
+        "accent": "#9a141d",
+        "accentForeground": "#f2e6eb",
+        "border": "rgba(154, 20, 29, 0.2)",
+        "input": "rgba(255, 46, 67, 0.15)",
+        "ring": "#ff2e43",
+        "sidebar": "#070203",
+        "sidebarForeground": "#c2b0b8",
+        "sidebarPrimary": "#ff2e43",
+        "sidebarAccent": "#2c1116",
+        "sidebarBorder": "rgba(154, 20, 29, 0.15)",
+        "sidebarRing": "#ff2e43"
+      },
+      "terminal": {
+        "background": "#0d0406",
+        "foreground": "#e5d4dc",
+        "cursor": "#ff2e43",
+        "cursorAccent": "#0d0406",
+        "selection": "rgba(255, 46, 67, 0.25)"
+      }
+    }
+  }
+}
