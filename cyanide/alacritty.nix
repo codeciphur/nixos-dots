@@ -1,4 +1,4 @@
-# Temporary alacritty nix file while terax does not work on NixOS Zaroro
+# Temporary alacritty nix file while terax does not work on NixOS Zarara
 { config, pkgs, ... }:
 
 {

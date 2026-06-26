@@ -12,12 +12,15 @@
     ./waybar/waybar.nix
     ./hyprlock.nix
     ./terax/terax.nix
+    ./ghostty.nix
+    ./fastfetch/fastfetch.nix
   ];
 
   # Note: niri is already installed via configuration.nix
   home.packages = with pkgs; [
     librewolf
     alacritty
+    ghostty
     awww
     starship
     # nerd-fonts.jetbrains-mono
@@ -30,6 +33,7 @@
     # These two are needed for terax to render properly:
     # gsettings-desktop-schemas
     # gtk4
+    fastfetch
   ];
 
   fonts.fontconfig.enable = true;
