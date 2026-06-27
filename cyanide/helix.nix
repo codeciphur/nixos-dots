@@ -39,7 +39,6 @@ in
     settings = {
       editor = {
         line-number = "relative";
-        use-terminal-cursor = true;
       };
 
       editor.cursor-shape = {

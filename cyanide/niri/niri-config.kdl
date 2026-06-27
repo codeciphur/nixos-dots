@@ -394,7 +394,7 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
 
-    Alt+D hotkey-overlay-title="Run an Application: rofi-wayland" { spawn "rofi"; }
+    Alt+D hotkey-overlay-title="Run an Application: rofi-wayland" { spawn "rofi" "-show" "drun"; }
     // Alt+Return hotkey-overlay-title="Spawn terminal: terax" { spawn "terax"; }
     Alt+Return hotkey-overlay-title="Spawn terminal: ghostty" { spawn "ghostty"; }
     Alt+T hotkey-overlay-title="Spawn terminal: alacritty" { spawn "alacritty"; }

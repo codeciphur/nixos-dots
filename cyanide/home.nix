@@ -7,7 +7,6 @@
     ./bash.nix
     ./niri/niri.nix
     ./helix.nix
-    ./alacritty.nix
     ./starship.nix
     ./waybar/waybar.nix
     ./hyprlock.nix
@@ -20,7 +19,6 @@
   # Note: niri is already installed via configuration.nix
   home.packages = with pkgs; [
     librewolf
-    alacritty
     ghostty
     awww
     starship
