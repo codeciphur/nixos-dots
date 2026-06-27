@@ -5,8 +5,36 @@ let
     _type = "literal";
     inherit value;
   };
+
+  # --- ALL MY SCRIPTS HERE ---
+  # Forges a binary literally named "?" in your user profile path
+  web-search-handler = pkgs.writeShellScriptBin "?" (builtins.readFile ./rofi-web-search.sh);
+
+  # Forges the "ai" query handler for terminal text lists
+  ai-query-handler = pkgs.writeShellScriptBin "ai" (builtins.readFile ./rofi-ai-handler.sh);
+
+  # Forges the "convert" query handler for unit and currency conversion
+  conversion-handler = pkgs.writeShellScriptBin "convert" (builtins.readFile ./rofi-conversion-handler.sh);
 in
 {
+  # --- ALL MY SCRIPTS GET IMPORTED HERE ---
+  home.packages = [
+    # Apps
+    pkgs.tela-icon-theme # icons for rofi
+    pkgs.tgpt # ai intergration
+    pkgs.jq # conversion
+    pkgs.units # conversion
+
+    # Scripts
+    web-search-handler
+    ai-query-handler
+    conversion-handler
+  ];
+
+  imports = [
+    ./desktop-entries.nix
+  ];
+
   programs.rofi = {
     enable = true;
 
@@ -15,7 +43,10 @@ in
 
     extraConfig = {
       show-icons = true;
-      # icon-theme = "Papirus-Dark";
+      icon-theme = "Tela-red-dark";
+      # This line ensures that if a search doesn't match an app, hitting enter 
+      # runs it as a command fallback automatically
+      drun-use-desktop-cache = false;
     };
 
     theme = {
@@ -100,7 +131,6 @@ in
         text-color = mkLiteral "@jabami-foreground";
       };
 
-      # CRITICAL FIX: Force the text and icons to inherit the element states
       "#element-text" = {
         background-color = mkLiteral "transparent";
         text-color = mkLiteral "inherit";
@@ -112,6 +142,23 @@ in
         text-color = mkLiteral "inherit";
         size = mkLiteral "24px";
         margin = mkLiteral "0px 12px 0px 0px";
+      };
+
+      # --- STYLING THE AI MESSAGE BLOCK ---
+      "#message" = {
+        background-color = mkLiteral "#18090d"; # Deep dark crimson charcoal from palette
+        border = mkLiteral "1px solid";
+        border-color = mkLiteral "@jabami-crimson";
+        border-radius = mkLiteral "6px";
+        padding = mkLiteral "14px";
+        margin = mkLiteral "10px 0px 0px 0px";
+      };
+
+
+      # --- STYLING THE AI MESSAGE BLOCK ---
+      "#textbox" = {
+        text-color = mkLiteral "@jabami-light-highlight";
+        background-color = mkLiteral "transparent";
       };
     };
   };
