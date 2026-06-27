@@ -39,7 +39,15 @@ in
     settings = {
       editor = {
         line-number = "relative";
+        use-terminal-cursor = true;
       };
+
+      editor.cursor-shape = {
+        insert = "bar";
+        normal = "block";
+        select = "underline";
+      };
+
       theme = "yumeko";
     };
 

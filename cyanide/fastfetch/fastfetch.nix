@@ -71,7 +71,7 @@
           format = "{5} {1} ({2})";
         }
         {
-          key = "│ ├ 󰍛 cpu     │";
+          key = "│ ├ 󰍛 cpu   │";
           type = "cpu";
           showPeCoreCount = true;
         }

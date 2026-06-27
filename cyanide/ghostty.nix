@@ -1,5 +1,14 @@
 { config, pkgs, ... }:
 
+let
+  # Fetch the cursor trail shaders repository directly from GitHub
+  ghostty-cursor-shaders = pkgs.fetchFromGitHub {
+    owner = "sahaj-b";
+    repo = "ghostty-cursor-shaders";
+    rev = "main"; 
+    hash = "sha256-B7B6K7Ee4uJlW8zzLP3ILgddnbcIQyNimY+rVllzbR0=";
+  };
+in
 {
   programs.ghostty = {
     enable = true;
@@ -13,6 +22,17 @@
       window-padding-x = 2;
       window-padding-y = 1;
       # keybind = [ "insert keybind here" "another keybind here" ];
+
+      # --- Cursor Shaders Configuration ---
+      # Point Ghostty to the newly linked path
+      # custom-shader = "~/.config/ghostty/shaders/cursor_tail.glsl";
+      # custom-shader-animation = "always";
+      # --- Cursor Shaders Configuration ---
+      # Choose your preferred effect by pointing to the specific .glsl file
+      custom-shader = "${ghostty-cursor-shaders}/cursor_tail.glsl";
+      
+      # Optional: if you use a line cursor or experience freezing when unfocused
+      custom-shader-animation = "always";
     };
 
     themes = {

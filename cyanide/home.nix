@@ -14,6 +14,7 @@
     ./terax/terax.nix
     ./ghostty.nix
     ./fastfetch/fastfetch.nix
+    ./rofi/rofi.nix
   ];
 
   # Note: niri is already installed via configuration.nix
