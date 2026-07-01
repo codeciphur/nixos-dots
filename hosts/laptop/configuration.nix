@@ -88,6 +88,23 @@
     };
   };
 
+  # This makes sure that my laptop actually stays asleep
+  # by preventing ideapad_acpi from waking up s2idle on my Lenovo Laptop
+  boot.kernelParams = [
+    # Fixes the immediate wake issue on modern AMD Lenovo laptops
+    "amd_pmc.enable_stb=1" 
+  
+    # Force the kernel to ignore the Embedded Controller waking up the system
+    "acpi.ec_no_wakeup=1"
+
+    # Fix the i2c_hid_acpi not initializing
+    "acpi.prefer_microsoft_guid=1"
+  ];
+
+  # Ensure that Wake-On-LAN is managed correctly for best battery life while sleeping:
+  networking.interfaces.enp3s0.wakeOnLan.enable = true;
+
+  
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

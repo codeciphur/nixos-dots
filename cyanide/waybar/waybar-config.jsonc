@@ -20,11 +20,10 @@
 
 	"modules-left": ["custom/smallspacer","niri/workspaces","custom/spacer","mpris"],
 	"modules-center": ["custom/padd","custom/l_end","custom/r_end","clock","custom/padd"],
-	"modules-right": ["custom/padd","custom/l_end","group/expand","network","group/expand-3","group/expand-2","group/expand-4","memory","cpu", "battery", "custom/notification","custom/padd"],
+	"modules-right": ["custom/padd","custom/l_end","group/expand","network","group/expand-3","group/expand-2","group/expand-4","memory","cpu", "idle_inhibitor", "battery", "custom/notification","custom/padd"],
 
 
 // sourced from modules based on config.ctl //
-
 "custom/led": {
     "format": "<span color='#021c18'>󰍿</span> <span color='#313436'></span> ",
     "format-alt": "󰍿 <span color='#bbc2c7'></span> ",
@@ -271,6 +270,22 @@
 		}
 	},
 
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "rotate": 0,
+        "format-icons": {
+            // "activated": "󰥔 ",
+            // "deactivated": " "
+            "activated": " ",  // Eye icon: active inhibition (won't sleep)
+            // "deactivated": " " // Slashed eye: normal behavior (will sleep)
+            // "activated": "󰔟 ",  // Or "󰒲 AWAKE" -> This shows when inhibition is ON (won't sleep)
+            "deactivated": "󰒲 "     // This shows when it's normal (will sleep)
+        },
+        "tooltip": true,
+        "tooltip-format-activated": "Idle Inhibited (Stay Awake)",
+        "tooltip-format-deactivated": "Idle Enabled"
+    },
+
     "custom/spotify": {
         "exec": "mediaplayer.py --player spotify",
         "format": " {}",
@@ -286,14 +301,6 @@
         "tooltip": true
     },
 
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "rotate": 0,
-        "format-icons": {
-            "activated": "󰥔 ",
-            "deactivated": " "
-        }
-    },
 
     "clock": {
         "format": "{:%I\n-—\n%M\n-—\n%p}",

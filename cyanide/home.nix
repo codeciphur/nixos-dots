@@ -14,10 +14,12 @@
     ./ghostty.nix
     ./fastfetch/fastfetch.nix
     ./rofi/rofi.nix
+    ./hypridle.nix
   ];
 
   # Note: niri is already installed via configuration.nix
   home.packages = with pkgs; [
+    brightnessctl # So that I can use my keys to control the brightness
     librewolf
     ghostty
     awww
