@@ -16,11 +16,13 @@
     ./rofi/rofi.nix
     ./hypridle.nix
     ./swaync.nix
+    ./yazi.nix
   ];
 
   # Note: niri is already installed via configuration.nix
   home.packages = with pkgs; [
     brightnessctl # So that I can use my keys to control the brightness
+    playerctl # So that I can use my keys to control music playback
     librewolf
     ghostty
     awww
@@ -31,11 +33,12 @@
     nerd-fonts.caskaydia-cove
     waybar
     hyprlock
-    rofi-unwrapped # rofi-wayland
+    rofi
     # These two are needed for terax to render properly:
     # gsettings-desktop-schemas
     # gtk4
     fastfetch
+    yazi
   ];
 
   fonts.fontconfig.enable = true;

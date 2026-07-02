@@ -62,6 +62,10 @@
 
   # Hyprlock
   security.pam.services.hyprlock = {};
+
+  # To allow gtk applications to fetch links - this is to allow
+  # SwayNC to display the correct cover art when playing through a web browser
+  services.gvfs.enable = true;
   
   # Terax
 

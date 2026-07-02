@@ -432,6 +432,8 @@ binds {
     Alt+B hotkey-overlay-title="Spawn terminal: librewolf" { spawn "librewolf"; }
     Alt+P hotkey-overlay-title="Lock Desktp: hyprlock" { spawn "hyprlock"; }
 
+    Alt+N hotkey-overlay-title="Open Notification Center: SwayNC" { spawn "swaync-client" "-t" "-sw"; }
+
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
     // For example, this is a standard bind to toggle the screen reader (orca).
