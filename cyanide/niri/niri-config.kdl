@@ -19,6 +19,11 @@ input {
             // If this section is empty, niri will fetch xkb settings
             // from org.freedesktop.locale1. You can control these using
             // localectl set-x11-keymap.
+
+            // Make caps lock another escape key
+            options "caps:escape"
+
+            // options "caps:swapescape" // This one swaps caps lock and escape
         }
 
         // Enable numlock on startup, omitting this setting disables it.
@@ -281,6 +286,7 @@ layout {
 spawn-at-startup "waybar"
 spawn-at-startup "hypridle"
 spawn-at-startup "awww-daemon"
+spawn-at-startup "swaync"
 // spawn-at-startup "awww" "img" "/home/cyanide/dots/cyanide/wallpapers/jabami-yumeko-wallpaper.png"
 spawn-at-startup "awww" "img" "~/dots/cyanide/wallpapers/jabami-yumeko-wallpaper.png"
 
@@ -337,6 +343,30 @@ gestures {
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://niri-wm.github.io/niri/Configuration:-Window-Rules
+
+// SwayNC nmtui combo, thingy:
+window-rule {
+    // Match the custom class we set in Ghostty
+    match app-id="com.ghostty.nmtuifloat"
+
+    // Force it out of the normal tiling grid
+    open-floating true
+
+    // Make it a clean, compact box right in the middle
+    default-column-width { fixed 650; }
+    default-window-height { fixed 450; }
+}
+
+// SwayNC bluetooth thing:
+window-rule {
+    // Intercepts our custom dotted Ghostty identifier
+    match app-id="com.ghostty.bluetuifloat"
+
+    open-floating true
+
+    default-column-width { fixed 650; }
+    default-window-height { fixed 450; }
+}
 
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.

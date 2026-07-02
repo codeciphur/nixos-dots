@@ -18,11 +18,12 @@
 
 // positions generated based on config.ctl //
 
-	"modules-left": ["custom/smallspacer","niri/workspaces","custom/spacer","mpris"],
+	"modules-left": ["custom/smallspacer", "custom/notification", "niri/workspaces", "custom/spacer", "mpris"],
 	// "modules-center": ["custom/padd","custom/l_end","custom/r_end","niri/window","custom/padd"],
 	"modules-center": ["custom/padd","custom/l_end","custom/r_end","clock","custom/padd"],
 	// "modules-right": ["custom/padd","custom/l_end","group/expand","network","group/expand-3","group/expand-2","group/expand-4","memory","cpu", "battery", "clock","custom/notification","custom/padd"],
-	"modules-right": ["custom/padd","custom/l_end","group/expand","network","group/expand-3","group/expand-2","group/expand-4","memory","cpu", "battery", "custom/notification","custom/padd"],
+	// "modules-right": ["custom/padd","custom/l_end","group/expand","network","group/expand-3","group/expand-2","group/expand-4","memory","cpu", "battery", "custom/notification","custom/padd"],
+	"modules-right": ["custom/padd","custom/l_end","group/expand","network","group/expand-4","memory","cpu", "battery", "custom/padd"],
 
 
 // sourced from modules based on config.ctl //
@@ -121,14 +122,14 @@
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
-      "notification": "󰅸",
-      "none": "󰂜",
-      "dnd-notification": "󰅸",
-      "dnd-none": "󱏨",
-      "inhibited-notification": "󰅸",
-      "inhibited-none": "󰂜",
-      "dnd-inhibited-notification": "󰅸",
-      "dnd-inhibited-none": "󱏨"
+      "notification": "󰅸 ",
+      "none": "󰂜 ",
+      "dnd-notification": "󰅸 ",
+      "dnd-none": "󱏨 ",
+      "inhibited-notification": "󰅸 ",
+      "inhibited-none": "󰂜 ",
+      "dnd-inhibited-notification": "󰅸 ",
+      "dnd-inhibited-none": "󱏨 "
     },
     "return-type": "json",
     "exec-if": "which swaync-client",

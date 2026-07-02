@@ -22,6 +22,7 @@
 
   networking.hostName = "crysis"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";

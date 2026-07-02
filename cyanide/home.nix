@@ -15,6 +15,7 @@
     ./fastfetch/fastfetch.nix
     ./rofi/rofi.nix
     ./hypridle.nix
+    ./swaync.nix
   ];
 
   # Note: niri is already installed via configuration.nix

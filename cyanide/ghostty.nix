@@ -18,15 +18,35 @@ in
       font-family = "CaskaydiaCove Nerd Font";
       theme = "jabami-yumeko";
       background-opacity = 0.8;
-      # background-blur = true;
+      background-blur = true;
       window-padding-x = 2;
       window-padding-y = 1;
-      # keybind = [ "insert keybind here" "another keybind here" ];
+      # window-decoration = "auto";
+      #window-decoration = "none";
 
-      # --- Cursor Shaders Configuration ---
-      # Point Ghostty to the newly linked path
-      # custom-shader = "~/.config/ghostty/shaders/cursor_tail.glsl";
-      # custom-shader-animation = "always";
+      keybind = [
+        "ctrl+1=goto_tab:1"
+        "ctrl+2=goto_tab:2"
+        "ctrl+3=goto_tab:3"
+        "ctrl+4=goto_tab:4"
+        "ctrl+5=goto_tab:5"
+        "ctrl+6=goto_tab:6"
+        "ctrl+7=goto_tab:7"
+        "ctrl+8=goto_tab:8"
+        "ctrl+h=new_split:right"
+        "ctrl+j=new_split:down"
+        "ctrl+shift+h=goto_split:left"
+        "ctrl+shift+j=goto_split:down"
+        "ctrl+shift+k=goto_split:up"
+        "ctrl+shift+l=goto_split:right"
+        "ctrl+alt+h=resize_split:left,10"
+        "ctrl+alt+j=resize_split:down,10"
+        "ctrl+alt+k=resize_split:up,10"
+        "ctrl+alt+l=resize_split:right,10"
+        "ctrl+shift+q=quit"
+        "ctrl+t=new_tab"
+      ];
+
       # --- Cursor Shaders Configuration ---
       # Choose your preferred effect by pointing to the specific .glsl file
       custom-shader = "${ghostty-cursor-shaders}/cursor_tail.glsl";
