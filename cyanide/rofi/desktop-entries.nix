@@ -31,5 +31,12 @@
       icon = "system-log-out";
       categories = [ "System" ];
     };
+    power-modes = {
+      name = "Power Modes";
+      comment = "Switch power profile";
+      exec = "/home/cyanide/dots/cyanide/rofi/rofi-power-profiles.sh";
+      icon = "battery";
+      categories = [ "System" ];
+    };
   };
 }

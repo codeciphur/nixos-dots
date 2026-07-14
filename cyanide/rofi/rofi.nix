@@ -24,6 +24,7 @@ in
     pkgs.tgpt # ai intergration
     pkgs.jq # conversion
     pkgs.units # conversion
+    pkgs.libnotify # powerprofile things
 
     # Scripts
     web-search-handler

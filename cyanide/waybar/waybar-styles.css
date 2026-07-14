@@ -382,3 +382,40 @@ tooltip {
     border-left: solid;
     border-left-width: 0.5;
 }
+
+/* ==========================================
+   Power Profiles Daemon (PPD) 
+   ========================================== */
+
+#power-profiles-daemon {
+    font-weight: normal;
+    font-size: 19px; /* Matches backlight/network sizes closely */
+    background: rgba(11, 4, 5, 0.0);
+    opacity: 1;
+    margin: 0px;
+    padding-left: 6px;
+    padding-right: 6px;
+    transition: all 0.2s ease;
+}
+
+/* Subtle hover effect that matches your layout */
+#power-profiles-daemon:hover {
+    color: #F2E6E7; /* Pale white on hover */
+    background: rgba(255, 21, 43, 0.15); /* Match active taskbar highlight */
+    border-radius: 7px;
+}
+
+/* Performance Mode: Glowing Red */
+#power-profiles-daemon.performance {
+    color: #FF152B;
+}
+
+/* Balanced Mode: Mid-tone Red */
+#power-profiles-daemon.balanced {
+    color: #D61C33;
+}
+
+/* Power Saver Mode: Blood Red */
+#power-profiles-daemon.power-saver {
+    color: #8A0A19;
+}

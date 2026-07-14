@@ -63,6 +63,9 @@
   # Hyprlock
   security.pam.services.hyprlock = {};
 
+  # Enable the power-profiles-daemon service
+  services.power-profiles-daemon.enable = true;
+
   # To allow gtk applications to fetch links - this is to allow
   # SwayNC to display the correct cover art when playing through a web browser
   services.gvfs.enable = true;
