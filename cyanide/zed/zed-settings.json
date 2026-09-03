@@ -12,6 +12,9 @@
     "diagnostics": false,
     "metrics": false
   },
+  //"show_signature_help_after_completion": true,
+  "auto_signature_help": true,
+  "show_signature_help_after_edits": true,
   "vim_mode": false,
   "icon_theme": "Zed (Default)",
   "ui_font_size": 17.0,
@@ -20,6 +23,6 @@
     "mode": "dark",
     "light": "One Light",
     //"dark": "Ayu Dark",
-    "dark": "Oxocarbon Dark (Variation III)",
+    "dark": "Yumeko Jabami (Solid)",
   },
 }

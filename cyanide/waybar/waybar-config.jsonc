@@ -344,7 +344,13 @@
         "format-charging-alt": "<span weight='bold' color='#D61C33'>{capacity}%</span>",
         "format-plugged-alt": "<span weight='bold' color='#D61C33'>{capacity}%</span>",
         "format-icons": ["󰝦 ","󰪞 ","󰪟 ","󰪠 ","󰪡 ","󰪢 ","󰪣 ","󰪤 ","󰪥 "],
-        "on-click-right": "pkill waybar && niri msg action spawn -- waybar"
+        "on-click-right": "pkill waybar && niri msg action spawn -- waybar",
+
+        // Custom tooltips on hover
+        "tooltip-format": "{capacity}%",
+        "tooltip-format-charging": "{capacity}% (Full in {time})",
+        "tooltip-format-discharging": "{capacity}% ({time} remaining)",
+        "tooltip-format-plugged": "{capacity}% (Plugged in)"
     },
 
     "backlight": {
