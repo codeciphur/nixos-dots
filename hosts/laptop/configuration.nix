@@ -19,6 +19,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+   
 
   networking.hostName = "crysis"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -80,6 +81,7 @@
   helix # Replaced evil-helix with helix - still a core system component.
   inputs.terax.packages.${pkgs.stdenv.hostPlatform.system}.terax # Terax ai editor
   xdg-desktop-portal-gtk  # Ensure a portal-compatible file chooser/theme layer is available
+  # refind # Make bootloader pretty
   ];
 
   # Enable XDG Desktop Portal for file picking & screensharing
@@ -111,6 +113,25 @@
 
   # Ensure that Wake-On-LAN is managed correctly for best battery life while sleeping:
   networking.interfaces.enp3s0.wakeOnLan.enable = true;
+
+
+  
+  # Ensure that zed can link lsps effectively
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      stdenv.cc.cc
+      zlib
+      openssl
+      glibc
+    ];
+  };
+
+  # Fun stuff: Set up a dev environment dynamically based on which directory you're in
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
 
   
   # Some programs need SUID wrappers, can be configured further or are

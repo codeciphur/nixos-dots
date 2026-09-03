@@ -17,6 +17,7 @@
     ./hypridle.nix
     ./swaync.nix
     ./yazi.nix
+    ./zed/zed.nix
   ];
 
   # Note: niri is already installed via configuration.nix
@@ -39,6 +40,7 @@
     # gtk4
     fastfetch
     yazi
+    xournalpp #Trying this out
   ];
 
   fonts.fontconfig.enable = true;
