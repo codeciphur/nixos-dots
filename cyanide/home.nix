@@ -18,6 +18,7 @@
     ./swaync.nix
     ./yazi.nix
     ./zed/zed.nix
+    ./vscodium/vscodium.nix
   ];
 
   # Note: niri is already installed via configuration.nix

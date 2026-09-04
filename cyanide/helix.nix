@@ -36,9 +36,43 @@ in
   programs.helix = {
     enable = true;
 
+    #LSP STUFF HERE
+    extraPackages = with pkgs; [
+      nil                  # Nix LSP
+      nixfmt               # nix formatter
+      #rust-analyzer        # Rust LSP
+      basedpyright              # Python LSP
+      #vscode-langservers-extracted # HTML/CSS/JSON LSPs
+      #marksman             # Markdown LSP
+    ];
+
+    languages = {
+      language-server.basedpyright = {
+        command = "basedpyright-langserver";
+        args = [ "--stdio" ];
+      };
+
+      language = [
+        {
+          name = "python";
+          language-servers = [ "basedpyright" ];
+        }
+      ];
+    };
+    # LSP STUFF ENDS HERE
+
     settings = {
       editor = {
         line-number = "relative";
+        end-of-line-diagnostics = "hint";
+        inline-diagnostics = {
+          cursor-line = "warning";
+          other-lines = "disable";
+        };
+        lsp = {
+          auto-signature-help = true; # Auto-show function hints inside ()
+          snippets = true;                    # Insert () automatically when accepting function completions
+        };
       };
 
       editor.cursor-shape = {
