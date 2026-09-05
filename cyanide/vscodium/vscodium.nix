@@ -28,6 +28,9 @@
         "workbench.colorTheme" = "ea9a13f6-fa7f-46a4-ba6e-6cefe1f55160";
         "editor.fontFamily" = "CaskaydiaCove Nerd Font";
         "terminal.integrated.fontFamily" = "CaskaydiaCove Nerd Font";
+        "editor.cursorSmoothCaretAnimation" = "on";
+        "editor.cursorBlinking" = "smooth"; # Options: "smooth", "phase", "expand", "solid"
+        "editor.semanticHighlighting.enabled" = true;
 
         "editor.fontSize" = 16;
         "editor.formatOnSave" = true;

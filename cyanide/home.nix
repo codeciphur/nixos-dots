@@ -6,6 +6,7 @@
     ./git.nix
     ./bash.nix
     ./niri/niri.nix
+    ./nvim/nvim.nix
     ./helix.nix
     ./starship.nix
     ./waybar/waybar.nix
