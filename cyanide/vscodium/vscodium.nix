@@ -7,6 +7,7 @@
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
         vscodevim.vim               # Vim motions
+        alefragnani.bookmarks       # Marks in the gutter like marks.vim
         usernamehw.errorlens        # End-of-line diagnostics
         mkhl.direnv                 # nix-direnv integration
         jnoortheen.nix-ide          # Nix language support
@@ -24,7 +25,7 @@
 
       userSettings = {
         #  Editor settings
-        "workbench.colorTheme" = "Doki Theme: DxD: Rias";
+        "workbench.colorTheme" = "ea9a13f6-fa7f-46a4-ba6e-6cefe1f55160";
         "editor.fontFamily" = "CaskaydiaCove Nerd Font";
         "terminal.integrated.fontFamily" = "CaskaydiaCove Nerd Font";
 
@@ -54,9 +55,16 @@
           " "  # Hint icon
         ];
 
+
         # Vim Leader & Clipboard Setup
         "vim.leader" = "<space>";
         "vim.useSystemClipboard" = false;
+
+        "vim.handleKeys" = {
+          "<C-p>" = false;
+          "<C-k>" = false;
+          "<C-t>" = false;
+        };
 
         "vim.normalModeKeyBindingsNonRecursive" = [
           {
@@ -66,6 +74,31 @@
           {
             "before" = [ "<leader>" "Y" ];
             "after" = [ "\"" "+" "Y" ];
+          }
+          {
+            "before" = [ "<leader>" "f" ];
+            "commands" = [ "workbench.action.quickOpen" ];
+          }
+          # Vim marks with Bookmarks
+          {
+            "before" = [ "m" "m" ];
+            "commands" = [ "bookmarks.toggle" ];
+          }
+          {
+            "before" = [ "m" "n" ];
+            "commands" = [ "bookmarks.jumpToNext" ];
+          }
+          {
+            "before" = [ "m" "N" ];
+            "commands" = [ "bookmarks.jumpToPrevious" ];
+          }
+          {
+            "before" = [ "m" "a" ];
+            "commands" = [ "bookmarks.listFromAllFiles" ];
+          }
+          {
+            "before" = [ "m" "c" ];
+            "commands" = [ "bookmarks.clear" ];
           }
         ];
 

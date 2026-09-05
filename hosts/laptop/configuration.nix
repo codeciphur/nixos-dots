@@ -78,7 +78,7 @@
   environment.systemPackages = with pkgs; [
   #  wget
   git
-  helix # Replaced evil-helix with helix - still a core system component.
+  evil-helix # Replaced evil-helix with helix - still a core system component.
   inputs.terax.packages.${pkgs.stdenv.hostPlatform.system}.terax # Terax ai editor
   xdg-desktop-portal-gtk  # Ensure a portal-compatible file chooser/theme layer is available
   # refind # Make bootloader pretty
